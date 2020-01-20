@@ -1,21 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class Carousel extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return Swiper(
-          itemBuilder: (BuildContext context,int index){
-            return new Image.network(
-              "http://via.placeholder.com/288x188",fit: 
-            BoxFit.contain,
+  return CarouselSlider(
+      height: 500.0,
+      viewportFraction: .8,
+      enableInfiniteScroll: false,
+      aspectRatio: 16/9,
+      enlargeCenterPage: true,
+      items: [1,2,3,4,5].map((i) {
+        return Builder(
+          builder: (BuildContext context) {
+            return Container(
+              width: MediaQuery.of(context).size.width,
+              margin: EdgeInsets.symmetric(horizontal: 18.0),
+              decoration: BoxDecoration(
+                color: Colors.amber
+              ),
+              child: Text('text $i', style: TextStyle(fontSize: 16.0),)
             );
           },
-          itemCount: 10,
-          viewportFraction: 0.9,
-          scale: 0.9,
-      );
+        );
+      }).toList(),
+    );
   }
-  
 }
