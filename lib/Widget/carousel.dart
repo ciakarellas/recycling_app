@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../Provider/recycling_provider.dart';
 
 
 class Carousel extends StatefulWidget{
+  
   @override
   _CarouselState createState() => _CarouselState();
 }
@@ -9,31 +12,29 @@ class Carousel extends StatefulWidget{
 class _CarouselState extends State<Carousel> {
 
   final PageController  ctrl = PageController(viewportFraction: 0.8);
-
+  var recyclingProvider = RecyclingProvider();
   // bym zapamietal co on robi 
 
-  String activeTag = 'active';
-  List<String> data = ['Plastik', 'Szkoło', '3', '4'];
-  int courentPage = 0;
   @override
   initState(){
     ctrl.addListener((){
       int next = ctrl.page.round();
-      if (courentPage != next){
-        setState(() {
-          courentPage = next;
-        });
+      var recyclingProvider = Provider.of<RecyclingProvider>(context, listen: false);
+      if (recyclingProvider.courentPage != next){
+        recyclingProvider.setCourentPage(next);
       }
     });
   }
   @override
   Widget build(BuildContext context) {
+  var recyclingProvider2 = Provider.of<RecyclingProvider>(context);
+  
   return PageView.builder(
       controller: ctrl,
-      itemCount: data.length,
+      itemCount: recyclingProvider2.data.length,
       itemBuilder: (context, courentIndex){
-        bool active = courentIndex == courentPage;
-        return _pageCarousel(data[courentIndex], active);
+        bool active = courentIndex == recyclingProvider2.courentPage;
+        return _pageCarousel(recyclingProvider2.data[courentIndex], active);
       },
     );
   }
