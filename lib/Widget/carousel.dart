@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:recycling_app/Widget/carousel_page.dart';
 import '../Provider/recycling_provider.dart';
 
 
@@ -34,12 +35,12 @@ class _CarouselState extends State<Carousel> {
       itemCount: recyclingProvider2.data.length,
       itemBuilder: (context, courentIndex){
         bool active = courentIndex == recyclingProvider2.courentPage;
-        return _pageCarousel(recyclingProvider2.data[courentIndex], active);
+        return PageCarousel(active, recyclingProvider2.data[courentIndex]);
       },
     );
   }
 
-  _pageCarousel(data, bool active){
+  /*_pageCarousel(data, bool active){
     //Animation proper
     final double blur = active ? 30 : 0;
     final double offset = active ? 20 : 0;
@@ -62,5 +63,5 @@ class _CarouselState extends State<Carousel> {
         ),
       ),
     );
-  }
+  }*/
 }
