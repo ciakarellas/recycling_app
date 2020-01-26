@@ -19,6 +19,7 @@ class PageCarousel extends StatelessWidget{
     final double blur = active ? 30 : 0;
     final double offset = active ? 20 : 0;
     final double topPading = active ? 40 : 0;
+    final double imageHeight = active ? 350 : 300;
     final button = Padding(
               padding: EdgeInsets.fromLTRB(0, topPading, 0, 5),
               child: MaterialButton(
@@ -35,7 +36,7 @@ class PageCarousel extends StatelessWidget{
 
     
     return AnimatedContainer(
-      duration: Duration(milliseconds: 1000),
+      duration: Duration(milliseconds: 200),
       curve: Curves.easeInSine,
       margin: EdgeInsets.only(top: top, bottom: bottom, right: 20,left: 20),
       decoration: BoxDecoration(
@@ -61,17 +62,28 @@ class PageCarousel extends StatelessWidget{
                     left: .6,
                     child: Opacity(
                       opacity: .3,
-                        child: Image(
-                          color: Colors.black38,
-                          image: AssetImage('./assets/plastic-bottle.png',),
-                          width: 150.0,
+                        child: AnimatedContainer(
+                          duration: Duration(milliseconds: 200),
+                          height: imageHeight,
+                          child: Image( 
+                            image: AssetImage('./assets/plastic-bottle.png',),
+                            width: 150,
+                            height: imageHeight,
+                          ),
                         ),
                     ),
                   ),
-                  Image( 
+                  
+                  AnimatedContainer(
+                    duration: Duration(milliseconds: 200),
+                    height: imageHeight,
+                                          child: Image( 
                       image: AssetImage('./assets/plastic-bottle.png',),
-                      width: 150.0,
+                      width: 150,
+                      height: imageHeight,
                     ),
+                  ),
+                  
                 ] 
               ),
               padding: EdgeInsets.all(8),
