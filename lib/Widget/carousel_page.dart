@@ -19,7 +19,6 @@ class PageCarousel extends StatelessWidget{
     final double bottom = active ? 150 : 200;
     // TODO: implement build
     return AnimatedContainer(
-
       duration: Duration(milliseconds: 200),
       curve: Curves.easeInSine,
       margin: EdgeInsets.only(top: top, bottom: bottom, right: 20,left: 20),
@@ -30,7 +29,40 @@ class PageCarousel extends StatelessWidget{
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(50),
-          color: Colors.redAccent
+          color: Colors.white70
+        ),
+        child: Column(
+          children: <Widget>[
+            Padding(
+              padding: EdgeInsets.all(30),
+              child: Text('Plastik'),),
+            Padding(
+              child: Stack(
+                alignment: Alignment.bottomCenter,
+                children: <Widget>[
+                  Container(
+                      width: 80,
+                      height: 15,
+                      decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black45,
+                          blurRadius: blur,
+                          ),
+                      ],
+                    ),
+                  ),
+                  
+                  Image( 
+                    image: AssetImage('./assets/plastic-bottle.png',),
+                    width: 150.0,
+                  )
+                ] 
+              ),
+              padding: EdgeInsets.all(8),
+            ),
+            Padding(padding: EdgeInsets.all(1),),
+          ],
         ),
       ),
     );
