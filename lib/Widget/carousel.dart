@@ -39,29 +39,4 @@ class _CarouselState extends State<Carousel> {
       },
     );
   }
-
-  /*_pageCarousel(data, bool active){
-    //Animation proper
-    final double blur = active ? 30 : 0;
-    final double offset = active ? 20 : 0;
-    final double top = active ? 150 : 200;
-    final double bottom = active ? 150 : 200;
-
-    return AnimatedContainer(
-
-      duration: Duration(milliseconds: 200),
-      curve: Curves.easeInSine,
-      margin: EdgeInsets.only(top: top, bottom: bottom, right: 20,left: 20),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(50),
-        boxShadow: [BoxShadow(color: Colors.black26, blurRadius: blur, offset: Offset(offset, offset))]
-      ),
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(50),
-          color: Colors.redAccent
-        ),
-      ),
-    );
-  }*/
 }
