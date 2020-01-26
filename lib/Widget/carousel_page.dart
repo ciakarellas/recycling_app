@@ -20,7 +20,7 @@ class PageCarousel extends StatelessWidget{
     final double offset = active ? 20 : 0;
     final double topPading = active ? 40 : 0;
     final double imageHeight = active ? 350 : 300;
-    final button = Padding(
+    /*final button = Padding(
               padding: EdgeInsets.fromLTRB(0, topPading, 0, 5),
               child: MaterialButton(
                 onPressed: (){},
@@ -29,7 +29,7 @@ class PageCarousel extends StatelessWidget{
                 shape: StadiumBorder(),
               ),
             );
-    final Widget opacity = active ? button : plug;
+    final Widget opacity = active ? button : plug;*/
     
     
     // TODO: implement build
@@ -88,7 +88,15 @@ class PageCarousel extends StatelessWidget{
               ),
               padding: EdgeInsets.all(8),
             ),
-            opacity
+            Padding(
+              padding: EdgeInsets.fromLTRB(0, topPading, 0, 5),
+              child: MaterialButton(
+                onPressed: (){},
+                color: Colors.greenAccent,
+                child: Text('Lista'),
+                shape: StadiumBorder(),
+              ),
+            ),
           ],
         ),
       ),
