@@ -12,25 +12,12 @@ class PageCarousel extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-
-    final plug = Padding(padding: EdgeInsets.all(0));
-    final double top = active ? 150 : 200;
-    final double bottom = active ? 150 : 200;
+    final double top = active ? 80 : 150;
+    final double bottom = active ? 80 : 150;
     final double blur = active ? 30 : 0;
     final double offset = active ? 20 : 0;
-    final double topPading = active ? 40 : 0;
-    final double imageHeight = active ? 350 : 300;
-    /*final button = Padding(
-              padding: EdgeInsets.fromLTRB(0, topPading, 0, 5),
-              child: MaterialButton(
-                onPressed: (){},
-                color: Colors.greenAccent,
-                child: Text('Lista'),
-                shape: StadiumBorder(),
-              ),
-            );
-    final Widget opacity = active ? button : plug;*/
-    
+    final double topPading = active ? 20 : 0;
+    final double imageHeight = active ? 300 : 180;
     
     // TODO: implement build
 
@@ -44,6 +31,7 @@ class PageCarousel extends StatelessWidget{
         boxShadow: [BoxShadow(color: Colors.black26, blurRadius: blur, offset: Offset(offset, offset))]
       ),
       child: Container(
+        height: 300,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(50),
           color: Colors.white70
@@ -51,7 +39,7 @@ class PageCarousel extends StatelessWidget{
         child: Column(
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.fromLTRB(0, 30, 0, 30),
+              padding: EdgeInsets.fromLTRB(0, 20, 0, 20),
               child: Text('Plastik'),),
             Padding(
               child: Stack(
@@ -63,21 +51,22 @@ class PageCarousel extends StatelessWidget{
                     child: Opacity(
                       opacity: .3,
                         child: AnimatedContainer(
-                          duration: Duration(milliseconds: 200),
+                          duration: Duration(milliseconds: 220),
                           height: imageHeight,
                           child: Image( 
                             image: AssetImage('./assets/plastic-bottle.png',),
                             width: 150,
                             height: imageHeight,
+                            color: Colors.black54,
                           ),
                         ),
                     ),
                   ),
                   
                   AnimatedContainer(
-                    duration: Duration(milliseconds: 200),
+                    duration: Duration(milliseconds: 220),
                     height: imageHeight,
-                                          child: Image( 
+                    child: Image( 
                       image: AssetImage('./assets/plastic-bottle.png',),
                       width: 150,
                       height: imageHeight,
