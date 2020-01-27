@@ -23,15 +23,14 @@ class PageCarousel extends StatelessWidget{
 
     
     return AnimatedContainer(
-      duration: Duration(milliseconds: 200),
-      curve: Curves.easeInSine,
+      duration: Duration(milliseconds: 300),
+      curve: Curves.easeOutExpo,
       margin: EdgeInsets.only(top: top, bottom: bottom, right: 20,left: 20),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(50),
         boxShadow: [BoxShadow(color: Colors.black26, blurRadius: blur, offset: Offset(offset, offset))]
       ),
       child: Container(
-        height: 300,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(50),
           color: Colors.white70
@@ -51,7 +50,8 @@ class PageCarousel extends StatelessWidget{
                     child: Opacity(
                       opacity: .3,
                         child: AnimatedContainer(
-                          duration: Duration(milliseconds: 220),
+                          duration: Duration(milliseconds: 300),
+                          curve: Curves.easeOutExpo,
                           height: imageHeight,
                           child: Image( 
                             image: AssetImage('./assets/plastic-bottle.png',),
@@ -64,7 +64,8 @@ class PageCarousel extends StatelessWidget{
                   ),
                   
                   AnimatedContainer(
-                    duration: Duration(milliseconds: 220),
+                    duration: Duration(milliseconds: 300),
+                    curve: Curves.easeOutExpo,
                     height: imageHeight,
                     child: Image( 
                       image: AssetImage('./assets/plastic-bottle.png',),
