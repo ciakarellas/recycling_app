@@ -50,7 +50,8 @@ class PageCarousel extends StatelessWidget{
                           duration: Duration(milliseconds: 300),
                           curve: Curves.easeOutExpo,
                           height: imageHeight,
-                          child: Image( 
+                          child: Image(
+                            
                             image: AssetImage('./assets/plastic-bottle.png',),
                             width: 150,
                             height: imageHeight,
