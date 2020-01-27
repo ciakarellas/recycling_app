@@ -5,9 +5,6 @@ class PageCarousel extends StatelessWidget{
   final bool active;
   final dataItem;
   
-  
-
-
   PageCarousel(this.active, this.dataItem);
 
   @override
@@ -39,7 +36,7 @@ class PageCarousel extends StatelessWidget{
           children: <Widget>[
             Padding(
               padding: EdgeInsets.fromLTRB(0, 20, 0, 20),
-              child: Text('Plastik'),),
+              child: Text(dataItem),),
             Padding(
               child: Stack(
                 alignment: Alignment.bottomCenter,
