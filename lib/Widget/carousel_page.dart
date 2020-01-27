@@ -36,7 +36,7 @@ class PageCarousel extends StatelessWidget{
           children: <Widget>[
             Padding(
               padding: EdgeInsets.fromLTRB(0, 20, 0, 20),
-              child: Text(dataItem),),
+              child: Text(dataItem['name']),),
             Padding(
               child: Stack(
                 alignment: Alignment.bottomCenter,
