@@ -13,23 +13,12 @@ class PageCarousel extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
 
-    final plug = Padding(padding: EdgeInsets.all(0));
-    final double top = active ? 150 : 200;
-    final double bottom = active ? 150 : 200;
+    final double top = active ? 130 : 180;
+    final double bottom = active ? 130 : 180;
     final double blur = active ? 30 : 0;
     final double offset = active ? 20 : 0;
-    final double topPading = active ? 40 : 0;
-    final double imageHeight = active ? 350 : 300;
-    /*final button = Padding(
-              padding: EdgeInsets.fromLTRB(0, topPading, 0, 5),
-              child: MaterialButton(
-                onPressed: (){},
-                color: Colors.greenAccent,
-                child: Text('Lista'),
-                shape: StadiumBorder(),
-              ),
-            );
-    final Widget opacity = active ? button : plug;*/
+    //final double topPading = active ? 40 : 0;
+    final double imageHeight = active ? 200 : 150;
     
     
     // TODO: implement build
@@ -49,9 +38,10 @@ class PageCarousel extends StatelessWidget{
           color: Colors.white70
         ),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.fromLTRB(0, 30, 0, 30),
+              padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
               child: Text('Plastik'),),
             Padding(
               child: Stack(
@@ -63,25 +53,22 @@ class PageCarousel extends StatelessWidget{
                     child: Opacity(
                       opacity: .3,
                         child: AnimatedContainer(
-                          duration: Duration(milliseconds: 200),
-                          height: imageHeight,
-                          child: Image( 
-                            image: AssetImage('./assets/plastic-bottle.png',),
-                            width: 150,
+                            duration: Duration(milliseconds: 200),
                             height: imageHeight,
+                            child: Image( 
+                              image: AssetImage('./assets/plastic-bottle.png',),
+                              height: imageHeight,
+                            ),
                           ),
-                        ),
                     ),
                   ),
-                  
                   AnimatedContainer(
-                    duration: Duration(milliseconds: 200),
-                    height: imageHeight,
-                                          child: Image( 
-                      image: AssetImage('./assets/plastic-bottle.png',),
-                      width: 150,
+                      duration: Duration(milliseconds: 200),
                       height: imageHeight,
-                    ),
+                                            child: Image( 
+                        image: AssetImage('./assets/plastic-bottle.png',),
+                        height: imageHeight,
+                      ),
                   ),
                   
                 ] 
@@ -89,7 +76,7 @@ class PageCarousel extends StatelessWidget{
               padding: EdgeInsets.all(8),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(0, topPading, 0, 5),
+              padding: EdgeInsets.fromLTRB(0, 5, 0, 5),
               child: MaterialButton(
                 onPressed: (){},
                 color: Colors.greenAccent,
