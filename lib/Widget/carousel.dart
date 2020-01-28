@@ -13,7 +13,9 @@ class Carousel extends StatefulWidget{
 class _CarouselState extends State<Carousel> {
 
   final PageController  ctrl = PageController(viewportFraction: 0.8);
-  
+  var recyclingProvider = RecyclingProvider();
+  // bym zapamietal co on robi 
+
   @override
   initState(){
     ctrl.addListener((){
@@ -28,16 +30,16 @@ class _CarouselState extends State<Carousel> {
   Widget build(BuildContext context) {
   var recyclingProvider2 = Provider.of<RecyclingProvider>(context);
   
-
-  return PageView.builder(
-    scrollDirection: Axis.horizontal,
-      controller: ctrl,
-      itemCount: recyclingProvider2.data.length,
-      itemBuilder: (context, courentIndex){
-        bool active = courentIndex == recyclingProvider2.courentPage;
-        return PageCarousel(active, recyclingProvider2.data[courentIndex]);
-      },
-    );
-
+  return AspectRatio(
+      aspectRatio: 6/10,
+      child: PageView.builder(
+        controller: ctrl,
+        itemCount: recyclingProvider2.data.length,
+        itemBuilder: (context, courentIndex){
+          bool active = courentIndex == recyclingProvider2.courentPage;
+          return PageCarousel(active, recyclingProvider2.data[courentIndex]);
+        },
+      ),
+  );
   }
 }
