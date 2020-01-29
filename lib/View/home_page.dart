@@ -5,8 +5,18 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Center(
-      child: Carousel(),
+    return Container(
+      decoration: BoxDecoration(
+
+        gradient: LinearGradient(
+          colors: [Colors.blue[100], Colors.blue[50], Colors.blue[50], Colors.white60],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter
+          )
+      ),
+      child: Center(
+        child: Carousel(),
+      ),
     );
   }
   
