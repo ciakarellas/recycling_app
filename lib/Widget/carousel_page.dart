@@ -13,12 +13,12 @@ class PageCarousel extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
 
-    final double top = active ? 130 : 180;
-    final double bottom = active ? 130 : 180;
+    final double top = active ? 100 : 150;
+    final double bottom = active ? 100 : 150;
     final double blur = active ? 30 : 0;
     final double offset = active ? 20 : 0;
-    //final double topPading = active ? 40 : 0;
-    final double imageHeight = active ? 200 : 150;
+    final double imageHeight = active ? 1.7 : 2.3;
+    final double deviceSize = MediaQuery.of(context).size.width;
     
     
     // TODO: implement build
@@ -54,20 +54,20 @@ class PageCarousel extends StatelessWidget{
                       opacity: .3,
                         child: AnimatedContainer(
                             duration: Duration(milliseconds: 200),
-                            height: imageHeight,
+                            height: deviceSize / imageHeight,
                             child: Image( 
                               image: AssetImage('./assets/plastic-bottle.png',),
-                              height: imageHeight,
+                              height: deviceSize / imageHeight,
                             ),
                           ),
                     ),
                   ),
                   AnimatedContainer(
                       duration: Duration(milliseconds: 200),
-                      height: imageHeight,
-                                            child: Image( 
-                        image: AssetImage('./assets/plastic-bottle.png',),
-                        height: imageHeight,
+                      height: deviceSize / imageHeight,
+                        child: Image( 
+                          image: AssetImage('./assets/plastic-bottle.png',),
+                          height: deviceSize / imageHeight,
                       ),
                   ),
                   

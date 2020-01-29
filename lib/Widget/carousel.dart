@@ -13,9 +13,7 @@ class Carousel extends StatefulWidget{
 class _CarouselState extends State<Carousel> {
 
   final PageController  ctrl = PageController(viewportFraction: 0.8);
-  var recyclingProvider = RecyclingProvider();
-  // bym zapamietal co on robi 
-
+  
   @override
   initState(){
     ctrl.addListener((){
@@ -30,9 +28,11 @@ class _CarouselState extends State<Carousel> {
   Widget build(BuildContext context) {
   var recyclingProvider2 = Provider.of<RecyclingProvider>(context);
   
+
   return AspectRatio(
-      aspectRatio: 6/10,
+      aspectRatio: 13/20,
       child: PageView.builder(
+      scrollDirection: Axis.horizontal,
         controller: ctrl,
         itemCount: recyclingProvider2.data.length,
         itemBuilder: (context, courentIndex){
