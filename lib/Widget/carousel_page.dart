@@ -17,7 +17,7 @@ class PageCarousel extends StatelessWidget{
     final double bottom = active ? 100 : 150;
     final double blur = active ? 30 : 0;
     final double offset = active ? 20 : 0;
-    final double imageHeight = active ? 1.7 : 2.6;
+    final double imageHeight = active ? 2.2 : 2.6;
     final double deviceSize = MediaQuery.of(context).size.width;
     
     
@@ -42,7 +42,7 @@ class PageCarousel extends StatelessWidget{
           children: <Widget>[
             Padding(
               padding: EdgeInsets.fromLTRB(0, 15, 0, 0),
-              child: Text('Plastik'),),
+              child: Text(dataItem['name']),),
             Padding(
               child: Stack(
                 alignment: Alignment.bottomCenter,
@@ -57,7 +57,7 @@ class PageCarousel extends StatelessWidget{
                             height: deviceSize / imageHeight,
                             child: Image(
                               color: Colors.black54,
-                              image: AssetImage('./assets/plastic-bottle.png',),
+                              image: AssetImage(dataItem['img']),
                               height: deviceSize / imageHeight,
                             ),
                           ),
@@ -67,7 +67,7 @@ class PageCarousel extends StatelessWidget{
                       duration: Duration(milliseconds: 200),
                       height: deviceSize / imageHeight,
                         child: Image( 
-                          image: AssetImage('./assets/plastic-bottle.png',),
+                          image: AssetImage(dataItem['img']),
                           height: deviceSize / imageHeight,
                       ),
                   ),
