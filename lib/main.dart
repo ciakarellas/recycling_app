@@ -18,8 +18,9 @@ class MyApp extends StatelessWidget {
             width: 90,
             margin: EdgeInsets.fromLTRB(2, 0, 2, 5),
             decoration: BoxDecoration(
-              color: Colors.amberAccent,
+              color: Colors.white,
               borderRadius: BorderRadius.circular(90),
+              boxShadow: [BoxShadow(color: Colors.black26, blurRadius: 2, offset: Offset(0, 2))]
             ),
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
@@ -35,7 +36,6 @@ class MyApp extends StatelessWidget {
                       child: Icon(Icons.restore),
                     ),
                     FlatButton(
-                      highlightColor: Colors.transparent,
                       onPressed: (){},
                       child: Icon(Icons.business),
                     ),
