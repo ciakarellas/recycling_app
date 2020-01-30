@@ -17,7 +17,7 @@ class PageCarousel extends StatelessWidget{
     final double bottom = active ? 100 : 150;
     final double blur = active ? 30 : 0;
     final double offset = active ? 20 : 0;
-    final double imageHeight = active ? 2.2 : 2.6;
+    final double imageHeight = active ? 2.3 : 3.0;
     final double deviceSize = MediaQuery.of(context).size.width;
     
     
@@ -27,7 +27,7 @@ class PageCarousel extends StatelessWidget{
     return AnimatedContainer(
       duration: Duration(milliseconds: 200),
       curve: Curves.easeInSine,
-      margin: EdgeInsets.only(top: top, bottom: bottom, right: 20,left: 20),
+      margin: EdgeInsets.only(top: top, bottom: bottom, right: 15,left: 15),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(50),
         boxShadow: [BoxShadow(color: Colors.black26, blurRadius: blur, offset: Offset(offset, offset))]
