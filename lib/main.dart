@@ -14,6 +14,39 @@ class MyApp extends StatelessWidget {
       create: (_) => new RecyclingProvider(),
       child: MaterialApp(
         home: Scaffold(
+          bottomNavigationBar: Container(
+            width: 90,
+            margin: EdgeInsets.fromLTRB(2, 0, 2, 5),
+            decoration: BoxDecoration(
+              color: Colors.amberAccent,
+              borderRadius: BorderRadius.circular(90),
+            ),
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    FlatButton(
+                      onPressed: (){},
+                      child: Icon(Icons.ac_unit),
+                    ),
+                    FlatButton(
+                      onPressed: (){},
+                      child: Icon(Icons.restore),
+                    ),
+                    FlatButton(
+                      highlightColor: Colors.transparent,
+                      onPressed: (){},
+                      child: Icon(Icons.business),
+                    ),
+                    FlatButton(
+                      onPressed: (){},
+                      child: Icon(Icons.accessibility_new),
+                    )
+                ],
+                ),
+              ),
+          ),
           body: HomePage(),
         ),
       ),

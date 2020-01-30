@@ -13,8 +13,8 @@ class PageCarousel extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
 
-    final double top = active ? 80 : 130;
-    final double bottom = active ? 100 : 150;
+    final double top = active ? 120 : 170;
+    final double bottom = active ? 60 : 100;
     final double blur = active ? 30 : 0;
     final double offset = active ? 20 : 0;
     final double imageHeight = active ? 2.3 : 3.0;
