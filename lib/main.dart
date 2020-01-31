@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:recycling_app/Provider/recycling_provider.dart';
 
@@ -10,6 +11,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext build){
+
+    
+
+    SystemChrome.setPreferredOrientations([
+        DeviceOrientation.portraitUp,
+      ]);
     return ChangeNotifierProvider(
       create: (_) => new RecyclingProvider(),
       child: MaterialApp(
@@ -20,7 +27,7 @@ class MyApp extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(90),
-              boxShadow: [BoxShadow(color: Colors.black26, blurRadius: 2, offset: Offset(0, 2))]
+              boxShadow: [BoxShadow(color: Colors.black26, blurRadius: 2, offset: Offset(0, 5))]
             ),
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
