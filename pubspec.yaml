@@ -44,7 +44,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
   - assets/plastic-bottle.png
-  - carton-box.png
+  - assets/carton-box.png
   - assets/Glass-Bottle.png
   - assets/bio.png
 
