@@ -10,19 +10,23 @@ class Bucket extends StatelessWidget {
     // TODO: implement build
     return Scaffold(
       bottomNavigationBar: BottomNavBar(),
-      body: Column(
-        children: <Widget>[
-          Align(
-            alignment: Alignment.topLeft,
-            child: FlatButton(
-              onPressed: (){
-                Navigator.pop(context);
-              }, 
-              child: Icon(Icons.arrow_back),
-              )
-          ),
-          Center(child: Text(category)),
-        ],
+      body: SafeArea(
+        top: true,
+        bottom: true,
+        child: Column(
+          children: <Widget>[
+            Align(
+              alignment: Alignment.topLeft,
+              child: FlatButton(
+                onPressed: (){
+                  Navigator.pop(context);
+                }, 
+                child: Icon(Icons.arrow_back),
+                )
+            ),
+            Center(child: Text(category)),
+          ],
+        ),
       ),
     );
   }
