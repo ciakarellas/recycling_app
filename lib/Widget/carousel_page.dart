@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recycling_app/View/BucketList.dart';
 
 class PageCarousel extends StatelessWidget{
 
@@ -79,7 +80,9 @@ class PageCarousel extends StatelessWidget{
             Padding(
               padding: EdgeInsets.fromLTRB(0, 5, 0, 5),
               child: MaterialButton(
-                onPressed: (){},
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Bucket(dataItem['name'])));
+                },
                 color: Colors.greenAccent,
                 child: Text('Lista'),
                 shape: StadiumBorder(),
