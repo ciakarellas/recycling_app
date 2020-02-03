@@ -8,9 +8,7 @@ class Bucket extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Scaffold(
-      bottomNavigationBar: BottomNavBar(),
-      body: SafeArea(
+    return SafeArea(
         top: true,
         bottom: true,
         child: Column(
@@ -27,8 +25,7 @@ class Bucket extends StatelessWidget {
             Center(child: Text(category)),
           ],
         ),
-      ),
-    );
+      );
   }
 
   

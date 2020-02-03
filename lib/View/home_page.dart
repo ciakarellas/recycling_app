@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recycling_app/View/bucketList.dart';
 import 'package:recycling_app/Widget/carousel.dart';
 
 class HomePage extends StatelessWidget {
@@ -50,7 +51,7 @@ class HomePage extends StatelessWidget {
           child: TabBarView(
             children: <Widget>[
               Carousel(),
-              Carousel(),
+              Bucket('category'),
               Carousel(),
               Carousel(),
             ],

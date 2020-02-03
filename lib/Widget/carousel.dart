@@ -12,32 +12,37 @@ class Carousel extends StatefulWidget{
 
 class _CarouselState extends State<Carousel> {
 
-  final PageController  ctrl = PageController(viewportFraction: 0.8);
-  
+  PageController _ctrl;
+  int currentPage = 0;
   @override
   initState(){
-    ctrl.addListener((){
-      int next = ctrl.page.round();
-      var recyclingProvider = Provider.of<RecyclingProvider>(context, listen: false);
-      if (recyclingProvider.courentPage != next){
-        recyclingProvider.setCourentPage(next);
+    _ctrl = PageController(
+      initialPage: 0, 
+      viewportFraction: 0.8,
+      keepPage: false
+    );
+    _ctrl.addListener((){
+      int next = _ctrl.page.round();
+      if (currentPage != next){
+        setState(() {
+          currentPage = next;
+        });
       }
     });
+    super.initState();
   }
   @override
   Widget build(BuildContext context) {
   var recyclingProvider2 = Provider.of<RecyclingProvider>(context);
-  
-
   return Center(
     child: AspectRatio(
         aspectRatio: 13/20,
         child: PageView.builder(
         scrollDirection: Axis.horizontal,
-          controller: ctrl,
+          controller: _ctrl,
           itemCount: recyclingProvider2.data.length,
           itemBuilder: (context, courentIndex){
-            bool active = courentIndex == recyclingProvider2.courentPage;
+            bool active = courentIndex == currentPage;
             return PageCarousel(active, recyclingProvider2.data[courentIndex]);
           },
         ),
