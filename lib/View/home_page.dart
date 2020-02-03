@@ -1,27 +1,62 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:recycling_app/Provider/recycling_provider.dart';
 import 'package:recycling_app/Widget/carousel.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-   final prov = Provider.of<RecyclingProvider>(context);
-   // TODO: implement if else statment to display child in this Container. 
-   // my idea is that to display correct view depend on wich screen user select
-    // TODO: implement build
-    return Container(
-      decoration: BoxDecoration(
-
-        gradient: LinearGradient(
-          colors: [Colors.blue[100], Colors.blue[50], Colors.blue[50], Colors.white60],
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter
-          )
+    return DefaultTabController(
+      length: 4,
+      child: Scaffold(
+        bottomNavigationBar: Container(
+          width: 90,
+          margin: EdgeInsets.fromLTRB(2, 0, 2, 5),
+          decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(90),
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.black26, blurRadius: 2, offset: Offset(0, 5))
+              ]),
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+            child: TabBar(
+                indicatorColor: Colors.transparent,
+                labelColor: Colors.green,
+                unselectedLabelColor: Colors.black87,
+                tabs: [
+                  Tab(
+                    icon: Icon(Icons.ac_unit),
+                  ),
+                  Tab(
+                    icon: Icon(Icons.save),
+                  ),
+                  Tab(
+                    icon: Icon(Icons.account_box),
+                  ),
+                  Tab(
+                    icon: Icon(Icons.radio),
+                  ),
+                ]),
+          ),
+        ),
+        body: Container(
+          decoration: BoxDecoration(
+              gradient: LinearGradient(colors: [
+            Colors.blue[100],
+            Colors.blue[50],
+            Colors.blue[50],
+            Colors.white60
+          ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
+          child: TabBarView(
+            children: <Widget>[
+              Carousel(),
+              Carousel(),
+              Carousel(),
+              Carousel(),
+            ],
+          ),
+        ),
       ),
-      child: Carousel(),
     );
   }
-  
 }
-

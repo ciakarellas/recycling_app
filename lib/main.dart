@@ -13,18 +13,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext build){
 
-    
-
     SystemChrome.setPreferredOrientations([
         DeviceOrientation.portraitUp,
       ]);
     return ChangeNotifierProvider(
       create: (_) => new RecyclingProvider(),
       child: MaterialApp(
-        home: Scaffold(
-          bottomNavigationBar: BottomNavBar(),
-          body: HomePage(),
-        ),
+        home: HomePage(),
       ),
     );
   }
