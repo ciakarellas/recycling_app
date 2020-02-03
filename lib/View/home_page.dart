@@ -19,9 +19,7 @@ class HomePage extends StatelessWidget {
           end: Alignment.bottomCenter
           )
       ),
-      child: Center(
-        child: Carousel(),
-      ),
+      child: Carousel(),
     );
   }
   

@@ -29,17 +29,19 @@ class _CarouselState extends State<Carousel> {
   var recyclingProvider2 = Provider.of<RecyclingProvider>(context);
   
 
-  return AspectRatio(
-      aspectRatio: 13/20,
-      child: PageView.builder(
-      scrollDirection: Axis.horizontal,
-        controller: ctrl,
-        itemCount: recyclingProvider2.data.length,
-        itemBuilder: (context, courentIndex){
-          bool active = courentIndex == recyclingProvider2.courentPage;
-          return PageCarousel(active, recyclingProvider2.data[courentIndex]);
-        },
-      ),
+  return Center(
+    child: AspectRatio(
+        aspectRatio: 13/20,
+        child: PageView.builder(
+        scrollDirection: Axis.horizontal,
+          controller: ctrl,
+          itemCount: recyclingProvider2.data.length,
+          itemBuilder: (context, courentIndex){
+            bool active = courentIndex == recyclingProvider2.courentPage;
+            return PageCarousel(active, recyclingProvider2.data[courentIndex]);
+          },
+        ),
+    ),
   );
   }
 }
