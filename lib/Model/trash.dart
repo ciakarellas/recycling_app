@@ -1,7 +1,7 @@
 class Trash {
   final String name;
   final String category;
-  String description;
+  final String description;
 
-  Trash(this.name, this.category);
+  Trash(this.name, this.category, this.description);
 }

@@ -51,7 +51,7 @@ class HomePage extends StatelessWidget {
           child: TabBarView(
             children: <Widget>[
               Carousel(),
-              Bucket('category'),
+              BucketList(),
               Carousel(),
               Carousel(),
             ],

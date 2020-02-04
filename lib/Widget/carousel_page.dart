@@ -81,7 +81,7 @@ class PageCarousel extends StatelessWidget{
               padding: EdgeInsets.fromLTRB(0, 5, 0, 5),
               child: MaterialButton(
                 onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Bucket(dataItem['name'])));
+                 
                 },
                 color: Colors.greenAccent,
                 child: Text('Lista'),
