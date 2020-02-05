@@ -5,7 +5,7 @@ import 'package:recycling_app/Provider/recycling_provider.dart';
 import 'package:recycling_app/Provider/trash_provider.dart';
 
 import './View/home_page.dart';
-import 'Widget/bottomNavBar.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -19,8 +19,8 @@ class MyApp extends StatelessWidget {
       ]);
     return MultiProvider(
       providers: [
-        Provider<TrashProvider>(create: (_) => TrashProvider()),
-        Provider<RecyclingProvider>(create: (_) => RecyclingProvider()),
+        ChangeNotifierProvider<TrashProvider>(create: (_) => TrashProvider()),
+        ChangeNotifierProvider<RecyclingProvider>(create: (_) => RecyclingProvider()),
       ],
       child: MaterialApp(
         home: HomePage(),

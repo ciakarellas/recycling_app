@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:recycling_app/View/BucketList.dart';
+
 
 class PageCarousel extends StatelessWidget{
 
