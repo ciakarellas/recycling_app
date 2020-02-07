@@ -14,10 +14,8 @@ class BucketListView extends StatelessWidget {
         bottom: true,
         child: Container(
           child: 
-              //SearchBar(),
               Stack(
                 children: <Widget>[
-                  
                   BucketList(),
                   SearchBar(),
                 ],

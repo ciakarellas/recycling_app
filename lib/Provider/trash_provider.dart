@@ -44,4 +44,18 @@ class TrashProvider extends ChangeNotifier{
     ];
 
     List<Trash>  get trashList => _trashList;
+
+    List<Trash> _searchingList;
+    List<Trash> get searchingList => _searchingList;
+
+    String _search = '';
+    get search => _search;
+
+    void searching(frase){
+      _searchingList = _trashList.where((trash) => trash.name.toLowerCase().contains(frase)).toList();
+      notifyListeners();
+    }
+
+
+
 }
