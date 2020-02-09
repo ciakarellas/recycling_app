@@ -15,8 +15,9 @@ class BucketList extends StatelessWidget {
           itemCount: trashProvider.trashList.length,
           itemBuilder: (BuildContext context, item){
               return Container(
-              padding: EdgeInsets.fromLTRB(25, 15, 10, 25),
+              padding: EdgeInsets.fromLTRB(25, 15, 25, 10),
               child: Row(
+                //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Container(
                     height: 70,
@@ -25,16 +26,17 @@ class BucketList extends StatelessWidget {
                       fit: BoxFit.contain,
                     )
                   ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Text(trashProvider.trashList[item].category, style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),),
-                        Text(trashProvider.trashList[item].name,)
-                      ],
+                  Container(
+                    padding: EdgeInsets.only(left:25),
+                    width: 200,
+                    child: Text(trashProvider.trashList[item].name, 
+                    textAlign: TextAlign.start,)
                     ),
-                  ),
+                  Text(
+                    trashProvider.trashList[item].category, 
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.start,
+                    ),
                 ],
               ),
             );
