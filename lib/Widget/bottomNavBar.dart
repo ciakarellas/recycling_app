@@ -14,7 +14,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
             width: 90,
             margin: EdgeInsets.fromLTRB(2, 0, 2, 5),
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: Colors.transparent,
               borderRadius: BorderRadius.circular(90),
               boxShadow: [BoxShadow(color: Colors.black26, blurRadius: 2, offset: Offset(0, 5))]
             ),

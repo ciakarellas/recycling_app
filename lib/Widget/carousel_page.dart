@@ -36,14 +36,15 @@ class PageCarousel extends StatelessWidget{
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(50),
-          color: Colors.white70
+          color: Color.fromRGBO(203,177,111, 1)
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
             Padding(
               padding: EdgeInsets.fromLTRB(0, 15, 0, 0),
-              child: Text(dataItem['name']),),
+              child: Text(dataItem['name'], style: TextStyle(fontWeight: FontWeight.w900),),
+            ),
             Padding(
               child: Stack(
                 alignment: Alignment.bottomCenter,
@@ -83,7 +84,7 @@ class PageCarousel extends StatelessWidget{
                 onPressed: (){
                  
                 },
-                color: Colors.greenAccent,
+                color: Color.fromRGBO(228,218,85, 1),
                 child: Text('Lista'),
                 shape: StadiumBorder(),
               ),

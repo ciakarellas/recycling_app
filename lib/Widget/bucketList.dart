@@ -15,7 +15,7 @@ class BucketList extends StatelessWidget {
           itemCount: trashProvider.trashList.length,
           itemBuilder: (BuildContext context, item){
               return Container(
-              padding: EdgeInsets.fromLTRB(10, 15, 10, 15),
+              padding: EdgeInsets.fromLTRB(25, 15, 10, 25),
               child: Row(
                 children: <Widget>[
                   Container(

@@ -28,7 +28,7 @@ class SearchBar extends StatelessWidget {
           },
           decoration: InputDecoration(
             icon: Padding(
-              padding:  EdgeInsets.only(left: 10),
+              padding:  EdgeInsets.only(left: 25),
               child: Icon(Icons.search),
             ),
             border: InputBorder.none,
