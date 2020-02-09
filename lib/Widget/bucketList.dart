@@ -11,6 +11,7 @@ class BucketList extends StatelessWidget {
     var trashProvider = Provider.of<TrashProvider>(context);
         if(trashProvider.searchingList == null){
           return ListView.builder(
+            padding: EdgeInsets.only(top:40),
           itemCount: trashProvider.trashList.length,
           itemBuilder: (BuildContext context, item){
               return Container(

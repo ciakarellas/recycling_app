@@ -8,8 +8,6 @@ class RecyclingProvider extends ChangeNotifier {
   get courentPage => _courentPage;
   get data => _data;
   
-  
-
   void setCourentPage(page){
     _courentPage = page;
     notifyListeners();
