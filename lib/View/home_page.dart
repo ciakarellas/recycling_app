@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:recycling_app/View/FaqView.dart';
 import 'package:recycling_app/View/bucketListView.dart';
 import 'package:recycling_app/Widget/carousel.dart';
+import 'package:recycling_app/Widget/faqCard.dart';
 
 class HomePage extends StatelessWidget {
   @override

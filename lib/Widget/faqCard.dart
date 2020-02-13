@@ -8,6 +8,7 @@ class FaqCard extends StatefulWidget {
 }
 
 class _FaqCardState extends State<FaqCard> {
+
   bool active = false;
   double height = 100;
 
