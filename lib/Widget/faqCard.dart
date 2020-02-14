@@ -1,59 +1,44 @@
 import 'package:flutter/material.dart';
+import 'package:recycling_app/Widget/faqCardAnimation.dart';
 
 class FaqCard extends StatefulWidget {
-  const FaqCard({Key key}) : super(key: key);
-
   @override
   _FaqCardState createState() => _FaqCardState();
 }
 
-class _FaqCardState extends State<FaqCard> {
+class _FaqCardState extends State<FaqCard> with TickerProviderStateMixin {
+  AnimationController _controller;
 
-  bool active = false;
-  double height = 100;
+  @override
+  void initState() {
+    super.initState();
 
+    _controller = AnimationController(
+      duration: const Duration(milliseconds: 200),
+      vsync: this
+    );
+  }
+
+  // ...Boilerplate...
+
+  Future<void> _playAnimation() async {
+    try {
+      await _controller.forward().orCancel;
+      //await _controller.reverse().orCancel;
+    } on TickerCanceled {
+      // the animation got canceled, probably because we were disposed
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    
-        return  Padding(
-          padding: EdgeInsets.all(8),
-          child: AnimatedContainer(
-              duration: Duration(milliseconds: 300),
-              curve: Curves.easeInSine,
-              height: height,
-              color: Colors.white,
-              width: 200,
-              child:  Column(
-                  children: <Widget>[
-          Text('testujemy co sie da'),
-          RaisedButton(onPressed: (){
-            setState(() {
-                active = !active;
-                height = active ? 200 : 100;
-            });
-          }),
-          AnimatedContainer(
-            duration: Duration(milliseconds: 400),
-            curve: Curves.easeInSine,
-            child: Visibility(
-              maintainAnimation: true,
-              maintainState: true,
-              visible: active,
-                          child: Padding(
-                padding: EdgeInsets.fromLTRB(8, 20, 8, 8),
-                child: Column(
-                  children: <Widget>[
-                    Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')
-                  ],
-                ),
+    return  GestureDetector(
+          onTap: (){
+            _playAnimation();
+          },
+          child: FaqCardAnimation(
+            controller: _controller,
           ),
-            ),
-      ),
-      
-              ],
-            ),
-          ),
-    );
-  }
+        );
+}
 }

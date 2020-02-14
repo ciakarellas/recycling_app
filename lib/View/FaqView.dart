@@ -6,13 +6,10 @@ class FaqView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: ListView.builder(
-        itemCount: 5,
-        itemBuilder: (BuildContext context, item){
-          return FaqCard();
-        },
-      ),
+    return ListView.builder(
+      itemBuilder: (BuildContext context, item){
+        return FaqCard();
+      },
     );
   }
 }
