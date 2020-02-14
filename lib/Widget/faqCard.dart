@@ -8,6 +8,7 @@ class FaqCard extends StatefulWidget {
 
 class _FaqCardState extends State<FaqCard> with TickerProviderStateMixin {
   AnimationController _controller;
+  bool active = false;
 
   @override
   void initState() {
@@ -21,7 +22,7 @@ class _FaqCardState extends State<FaqCard> with TickerProviderStateMixin {
 
   // ...Boilerplate...
 
-  Future<void> _playAnimation() async {
+  /*Future<void> _playAnimation() async {
     try {
       await _controller.forward().orCancel;
       //await _controller.reverse().orCancel;
@@ -29,12 +30,17 @@ class _FaqCardState extends State<FaqCard> with TickerProviderStateMixin {
       // the animation got canceled, probably because we were disposed
     }
   }
-
+*/
   @override
   Widget build(BuildContext context) {
     return  GestureDetector(
           onTap: (){
-            _playAnimation();
+            active = !active;
+            if (active){
+              _controller.forward().orCancel;
+            } else {
+              _controller.reverse().orCancel;
+            }
           },
           child: FaqCardAnimation(
             controller: _controller,
