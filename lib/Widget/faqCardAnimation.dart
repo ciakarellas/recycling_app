@@ -3,23 +3,6 @@ import 'package:flutter/material.dart';
 class FaqCardAnimation extends StatelessWidget {
   FaqCardAnimation({ Key key, this.controller, }) :
 
-    // Each animation defined here transforms its value during the subset
-    // of the controller's duration defined by the animation's interval.
-    // For example the opacity animation transforms its value during
-    // the first 10% of the controller's duration.
-
-    opacity = Tween<double>(
-      begin: 0.0,
-      end: 1.0,
-    ).animate(
-      CurvedAnimation(
-        parent: controller,
-        curve: Interval(
-          0.0, 0.100,
-          curve: Curves.ease,
-        ),
-      ),
-    ),
     height = Tween<double>(
       begin: 100.0,
       end: 200.0,
@@ -32,34 +15,37 @@ class FaqCardAnimation extends StatelessWidget {
         ),
       ),
     ),
-
-    // ... Other tween definitions ...
-
+    
+    visible = Tween(
+      begin: false,
+      end: true).animate(
+        CurvedAnimation(
+        parent: controller,
+        curve: Interval(
+          0.0, 0.900,
+          curve: Curves.ease,
+        ),
+      ),
+      ),
     super(key: key);
 
   final Animation<double> controller;
-  final Animation<double> opacity;
   final Animation<double> height;
+  final Animation visible;
 
-  // This function is called each time the controller "ticks" a new frame.
-  // When it runs, all of the animation's values will have been
-  // updated to reflect the controller's current value.
+
   Widget _buildAnimation(BuildContext context, Widget child) {
     return Container(
-      alignment: Alignment.bottomCenter,
-      child: Opacity(
-        opacity: opacity.value,
-        child: Container(
-          width: 200,
-          height: height.value,
-          decoration: BoxDecoration(
-            color: Colors.red,
-            border: Border.all(
-              color: Colors.indigo[300],
-              width: 3.0,
-            ),
-          ),
-        ),
+      padding: EdgeInsets.all(8),
+      color: Colors.white,
+      height: height.value,
+      child: Column(
+        children: <Widget>[
+          Text('Tu jest nowy text dla pytan i odpowiedzi'),
+          Visibility(
+            visible: visible.value,
+            child: Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. '),)
+        ],
       ),
     );
   }

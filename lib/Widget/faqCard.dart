@@ -20,17 +20,6 @@ class _FaqCardState extends State<FaqCard> with TickerProviderStateMixin {
     );
   }
 
-  // ...Boilerplate...
-
-  /*Future<void> _playAnimation() async {
-    try {
-      await _controller.forward().orCancel;
-      //await _controller.reverse().orCancel;
-    } on TickerCanceled {
-      // the animation got canceled, probably because we were disposed
-    }
-  }
-*/
   @override
   Widget build(BuildContext context) {
     return  GestureDetector(
