@@ -38,7 +38,7 @@ class FaqCardAnimation extends StatefulWidget {
 }
 
 class _FaqCardAnimationState extends State<FaqCardAnimation> {
-  _chc(){
+  setVibility(){
     if (widget.visible.value == 0.0){
       return false;
     } else if(widget.visible.value == 1.0) {
@@ -57,7 +57,7 @@ class _FaqCardAnimationState extends State<FaqCardAnimation> {
         children: <Widget>[
           Text('Tu jest nowy text dla pytan i odpowiedzi'),
           Visibility(
-            visible: _chc(),
+            visible: setVibility(),
             child: Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. '),)
         ],
       ),
