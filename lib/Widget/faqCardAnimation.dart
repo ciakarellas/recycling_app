@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class FaqCardAnimation extends StatelessWidget {
+class FaqCardAnimation extends StatefulWidget {
   FaqCardAnimation({ Key key, this.controller, }) :
 
     height = Tween<double>(
@@ -17,8 +17,8 @@ class FaqCardAnimation extends StatelessWidget {
     ),
     
     visible = Tween(
-      begin: false,
-      end: true).animate(
+      begin: 0.0,
+      end: 1.0).animate(
         CurvedAnimation(
         parent: controller,
         curve: Interval(
@@ -31,19 +31,33 @@ class FaqCardAnimation extends StatelessWidget {
 
   final Animation<double> controller;
   final Animation<double> height;
-  final Animation visible;
+  final Animation<double> visible;
 
+  @override
+  _FaqCardAnimationState createState() => _FaqCardAnimationState();
+}
+
+class _FaqCardAnimationState extends State<FaqCardAnimation> {
+  _chc(){
+    if (widget.visible.value == 0.0){
+      return false;
+    } else if(widget.visible.value == 1.0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   Widget _buildAnimation(BuildContext context, Widget child) {
     return Container(
       padding: EdgeInsets.all(8),
       color: Colors.white,
-      height: height.value,
+      height: widget.height.value,
       child: Column(
         children: <Widget>[
           Text('Tu jest nowy text dla pytan i odpowiedzi'),
           Visibility(
-            visible: visible.value,
+            visible: _chc(),
             child: Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. '),)
         ],
       ),
@@ -54,7 +68,7 @@ class FaqCardAnimation extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       builder: _buildAnimation,
-      animation: controller,
+      animation: widget.controller,
     );
   }
 }
