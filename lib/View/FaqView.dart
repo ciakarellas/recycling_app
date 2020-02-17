@@ -7,6 +7,7 @@ class FaqView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      itemCount: 4,
       itemBuilder: (BuildContext context, item){
         return FaqCard();
       },

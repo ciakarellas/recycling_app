@@ -10,12 +10,12 @@ class HomePage extends StatelessWidget {
     return DefaultTabController(
       length: 4,
       child: Scaffold(
-        backgroundColor: Color.fromRGBO(59, 183, 143, 1),
+        backgroundColor: Color.fromRGBO(235, 237, 238, 1),
         bottomNavigationBar: Container(
           width: 90,
           margin: EdgeInsets.fromLTRB(2, 0, 2, 5),
           decoration: BoxDecoration(
-              color: Color.fromRGBO(228,218,85, 1),
+              color: Color.fromRGBO(235, 237, 238, 1),
               borderRadius: BorderRadius.circular(90),
               boxShadow: [
                 BoxShadow(
@@ -48,8 +48,8 @@ class HomePage extends StatelessWidget {
           decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  Color.fromRGBO(11, 171, 100, 1),
-                  Color.fromRGBO(59, 183, 143, 1),
+                  Color.fromRGBO(253, 251, 251, 1),
+                  Color.fromRGBO(235, 237, 238, 1),
                 ], 
                 begin: Alignment.topCenter, 
                 end: Alignment.bottomCenter
