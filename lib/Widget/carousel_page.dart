@@ -84,7 +84,7 @@ class PageCarousel extends StatelessWidget{
                 onPressed: (){
                  
                 },
-                color: Color.fromRGBO(69,173,168, 1),
+                color: Colors.lightBlue[600],
                 child: Text('Lista',style: TextStyle(color: Colors.white),),
                 shape: StadiumBorder(),
               ),

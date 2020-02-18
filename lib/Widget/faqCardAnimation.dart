@@ -52,7 +52,7 @@ class _FaqCardAnimationState extends State<FaqCardAnimation> {
     return Container(
       height: widget.height.value,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Colors.lightBlue[600],
         borderRadius: BorderRadius.circular(15),
         boxShadow: [
           BoxShadow(
@@ -64,7 +64,11 @@ class _FaqCardAnimationState extends State<FaqCardAnimation> {
             padding: const EdgeInsets.fromLTRB(10, 30, 10, 18),
             child: Text(
               'Gdzie wyrzucać chusteczki higieniczne?', 
-              style: TextStyle(fontSize: 22),
+              style: TextStyle(
+                fontSize: 22,
+                color: Colors.white
+              ),
+              
             ),
           ),
           Visibility(
@@ -73,7 +77,7 @@ class _FaqCardAnimationState extends State<FaqCardAnimation> {
               padding: const EdgeInsets.fromLTRB(15, 18, 15, 8),
               child: Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
               style: TextStyle(
-                color: Colors.black54,
+                color: Colors.white70,
                 height: 1.5,
               ),),
             ),)
