@@ -9,15 +9,13 @@ class SearchBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final _trashprovider = Provider.of<TrashProvider>(context);
     return Container(
-      padding: EdgeInsets.all(0),
+      margin: EdgeInsets.all(10),
+      padding: EdgeInsets.all(10),
       height: 50,
       decoration: BoxDecoration(
         boxShadow: [BoxShadow(color: Colors.black26, blurRadius: 10, offset: Offset(5, 15))],
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(30.0),
-          bottomRight: Radius.circular(30.0),
-        ),
-        color: Color.fromRGBO(11, 171, 100, 1),
+        borderRadius: BorderRadius.circular(10),
+        color: Colors.white,
       ),
       child: Padding(
         padding: EdgeInsets.all(0),
@@ -32,6 +30,7 @@ class SearchBar extends StatelessWidget {
               child: Icon(Icons.search),
             ),
             border: InputBorder.none,
+            hintText: "Wpisz co chesz wyrzucić",
           ),
         ),
       ),

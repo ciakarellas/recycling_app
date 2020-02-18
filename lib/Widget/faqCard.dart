@@ -17,6 +17,7 @@ class _FaqCardState extends State<FaqCard> with TickerProviderStateMixin {
     _controller = AnimationController(
       duration: const Duration(milliseconds: 200),
       vsync: this
+      
     );
   }
 
@@ -31,8 +32,11 @@ class _FaqCardState extends State<FaqCard> with TickerProviderStateMixin {
               _controller.reverse().orCancel;
             }
           },
-          child: FaqCardAnimation(
-            controller: _controller,
+          child: Padding(
+            padding: EdgeInsets.fromLTRB(15, 20, 15, 20),
+            child: FaqCardAnimation(
+              controller: _controller,
+            ),
           ),
         );
 }

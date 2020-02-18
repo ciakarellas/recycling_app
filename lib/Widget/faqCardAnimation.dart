@@ -10,8 +10,8 @@ class FaqCardAnimation extends StatefulWidget {
       CurvedAnimation(
         parent: controller,
         curve: Interval(
-          0.0, 0.100,
-          curve: Curves.ease,
+          0.0, .800,
+          curve: Curves.slowMiddle,
         ),
       ),
     ),
@@ -50,15 +50,33 @@ class _FaqCardAnimationState extends State<FaqCardAnimation> {
 
   Widget _buildAnimation(BuildContext context, Widget child) {
     return Container(
-      padding: EdgeInsets.all(8),
-      color: Colors.white,
       height: widget.height.value,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(15),
+        boxShadow: [
+          BoxShadow(
+              color: Colors.black12, blurRadius: 25, offset: Offset(0, 5))
+        ]),
       child: Column(
         children: <Widget>[
-          Text('Tu jest nowy text dla pytan i odpowiedzi'),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(10, 30, 10, 18),
+            child: Text(
+              'Gdzie wyrzucać chusteczki higieniczne?', 
+              style: TextStyle(fontSize: 22),
+            ),
+          ),
           Visibility(
             visible: setVibility(),
-            child: Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. '),)
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(15, 18, 15, 8),
+              child: Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+              style: TextStyle(
+                color: Colors.black54,
+                height: 1.5,
+              ),),
+            ),)
         ],
       ),
     );
@@ -69,6 +87,7 @@ class _FaqCardAnimationState extends State<FaqCardAnimation> {
     return AnimatedBuilder(
       builder: _buildAnimation,
       animation: widget.controller,
+      
     );
   }
 }

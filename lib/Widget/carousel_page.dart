@@ -36,7 +36,7 @@ class PageCarousel extends StatelessWidget{
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(50),
-          color: Color.fromRGBO(203,177,111, 1)
+          color: Colors.white//Color.fromRGBO(203,177,111, 1)
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -84,8 +84,8 @@ class PageCarousel extends StatelessWidget{
                 onPressed: (){
                  
                 },
-                color: Color.fromRGBO(228,218,85, 1),
-                child: Text('Lista'),
+                color: Color.fromRGBO(69,173,168, 1),
+                child: Text('Lista',style: TextStyle(color: Colors.white),),
                 shape: StadiumBorder(),
               ),
             ),
