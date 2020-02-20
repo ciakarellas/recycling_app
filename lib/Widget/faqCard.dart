@@ -33,7 +33,7 @@ class _FaqCardState extends State<FaqCard> with TickerProviderStateMixin {
             }
           },
           child: Padding(
-            padding: EdgeInsets.fromLTRB(15, 20, 15, 20),
+            padding: EdgeInsets.all(15),
             child: FaqCardAnimation(
               controller: _controller,
             ),
