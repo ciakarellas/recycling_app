@@ -21,38 +21,39 @@ class BucketList extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20)
                 ),
                 padding: EdgeInsets.fromLTRB(15,25,15,25),
-                child: Row(
-                  children: <Widget>[
-                    Container(
-                      padding: EdgeInsets.only(left:20),
-                      height: 70,
-                      child: Image(
-                        image: AssetImage('assets/plastic-bottle.png'), 
-                        fit: BoxFit.contain,
-                      )
-                    ),
-                    Container(
-                      padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-                      child: Column(
-                        children: <Widget>[
-                          Center(
-                            child: Text(trashProvider.trashList[item].name, 
-                              textAlign: TextAlign.start,
-                              style: TextStyle(
-                                fontSize: 18
+                child:Row(
+                    children: <Widget>[
+                      Container(
+                        padding: EdgeInsets.only(left:20),
+                        height: 70,
+                        child: Image(
+                          image: AssetImage('assets/plastic-bottle.png'), 
+                          fit: BoxFit.contain,
+                        )
+                      ),Expanded(
+                        child: Container(
+                        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                        child: Column(
+                          children: <Widget>[
+                            Center(
+                              child: Text(trashProvider.trashList[item].name, 
+                                textAlign: TextAlign.start,
+                                style: TextStyle(
+                                  fontSize: 18
+                                ),
                               ),
                             ),
-                          ),
-                          Text(
-                            trashProvider.trashList[item].category, 
-                            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                            textAlign: TextAlign.start,
-                         ),
-                        ],
+                            Text(
+                              trashProvider.trashList[item].category, 
+                              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                              textAlign: TextAlign.start,
+                           ),
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
-                ),
+                      )
+                    ],
+                  ),
             );
           },
         );
