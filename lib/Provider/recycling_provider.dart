@@ -39,4 +39,5 @@ class RecyclingProvider extends ChangeNotifier {
       'img': 'assets/bio.png',
     }
   ];
+  
 }

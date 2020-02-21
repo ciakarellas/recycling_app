@@ -30,7 +30,7 @@ class SearchBar extends StatelessWidget {
               child: Icon(Icons.search),
             ),
             border: InputBorder.none,
-            hintText: "Wpisz co chesz wyrzucić",
+            hintText: "Gdzie powinienem wyrzucić ... ?",
           ),
         ),
       ),

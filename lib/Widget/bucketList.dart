@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:recycling_app/Provider/recycling_provider.dart';
 
 import 'package:recycling_app/Provider/trash_provider.dart';
 
@@ -9,6 +10,7 @@ class BucketList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var trashProvider = Provider.of<TrashProvider>(context);
+    var recyclingProvider = Provider.of<RecyclingProvider>(context);
         if(trashProvider.searchingList == null){
           return ListView.builder(
             padding: EdgeInsets.only(top:60),
@@ -28,7 +30,7 @@ class BucketList extends StatelessWidget {
                         padding: EdgeInsets.only(left:20),
                         height: 70,
                         child: Image(
-                          image: AssetImage('assets/plastic-bottle.png'), 
+                          image: AssetImage(trashProvider.trashList[item].picUrl), 
                           fit: BoxFit.contain,
                         )
                       ),
