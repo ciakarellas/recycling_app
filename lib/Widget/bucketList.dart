@@ -10,7 +10,6 @@ class BucketList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var trashProvider = Provider.of<TrashProvider>(context);
-    var recyclingProvider = Provider.of<RecyclingProvider>(context);
         if(trashProvider.searchingList == null){
           return ListView.builder(
             padding: EdgeInsets.only(top:60),
@@ -81,7 +80,7 @@ class BucketList extends StatelessWidget {
                         padding: EdgeInsets.only(left:20),
                         height: 70,
                         child: Image(
-                          image: AssetImage('assets/plastic-bottle.png'), 
+                          image: AssetImage(trashProvider.searchingList[item].picUrl), 
                           fit: BoxFit.contain,
                         )
                       ),

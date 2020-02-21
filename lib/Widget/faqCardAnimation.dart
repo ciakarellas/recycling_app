@@ -5,7 +5,7 @@ class FaqCardAnimation extends StatefulWidget {
 
     height = Tween<double>(
       begin: 100.0,
-      end: 200.0,
+      end: 300.0,
     ).animate(
       CurvedAnimation(
         parent: controller,
