@@ -16,18 +16,18 @@ class BucketList extends StatelessWidget {
             itemCount: trashProvider.trashList.length,
             itemBuilder: (BuildContext context, item){
               return Container(
-                margin: EdgeInsets.all(15),
+                margin: EdgeInsets.all(5),
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.grey[100] ,width: 1.9),
                   borderRadius: BorderRadius.circular(20)
                 ),
-                padding: EdgeInsets.fromLTRB(15,25,15,25),
+                padding: EdgeInsets.fromLTRB(5,20,5,20),
                 child: Container(
                   child: Row(
                     children: <Widget>[
                       Container(
-                        padding: EdgeInsets.only(left:20),
-                        height: 70,
+                        padding: EdgeInsets.only(left:10),
+                        height: 100,
                         child: Image(
                           image: AssetImage(trashProvider.trashList[item].picUrl), 
                           fit: BoxFit.contain,
@@ -67,18 +67,18 @@ class BucketList extends StatelessWidget {
             itemCount: trashProvider.searchingList.length,
             itemBuilder: (BuildContext context, item){
               return Container(
-                margin: EdgeInsets.all(15),
+                margin: EdgeInsets.all(5),
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.grey[100] ,width: 1.9),
                   borderRadius: BorderRadius.circular(20)
                 ),
-                padding: EdgeInsets.fromLTRB(15,25,15,25),
+                padding: EdgeInsets.fromLTRB(5,20,5,20),
                 child: Container(
                   child: Row(
                     children: <Widget>[
                       Container(
-                        padding: EdgeInsets.only(left:20),
-                        height: 70,
+                        padding: EdgeInsets.only(left:10),
+                        height: 100,
                         child: Image(
                           image: AssetImage(trashProvider.searchingList[item].picUrl), 
                           fit: BoxFit.contain,

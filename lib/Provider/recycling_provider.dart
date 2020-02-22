@@ -16,15 +16,15 @@ class RecyclingProvider extends ChangeNotifier {
   List<Map> _data = [
     {
       'name': 'Metale i tworzywa sztuczne',
-      'img': 'assets/plastic-bottle.png',
+      'img': 'assets/plastik_metal.png',
     },
     {
       'name': 'Szkło',
-      'img': 'assets/Glass-Bottle.png',
+      'img': 'assets/szklo.png',
     },
     {
       'name': 'Papier',
-      'img': 'assets/carton-box.png',
+      'img': 'assets/papier.png',
     },
     {
       'name': 'Odpady biodegradowalne',
@@ -32,7 +32,7 @@ class RecyclingProvider extends ChangeNotifier {
     },
     {
       'name': 'Odpady zmieszane',
-      'img': 'assets/bio.png',
+      'img': 'assets/zmieszane.png',
     },
 {
       'name': 'PSZOK',
