@@ -18,7 +18,7 @@ class PageCarousel extends StatelessWidget{
     final double bottom = active ? 60 : 100;
     final double blur = active ? 30 : 0;
     final double offset = active ? 20 : 0;
-    final double imageHeight = active ? 2.3 : 3.0;
+    final double imageHeight = active ? 1.7 : 3.0;
     final double deviceSize = MediaQuery.of(context).size.width;
     
     
@@ -42,7 +42,7 @@ class PageCarousel extends StatelessWidget{
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.fromLTRB(0, 15, 0, 0),
+              padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
               child: Text(dataItem['name'], style: TextStyle(fontWeight: FontWeight.w900),),
             ),
             Padding(
