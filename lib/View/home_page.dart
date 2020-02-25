@@ -45,16 +45,6 @@ class HomePage extends StatelessWidget {
         ),
         body: Container(
           color:Colors.white,
-          /*decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  Color.fromRGBO(213, 251, 251, 1),
-                  Color.fromRGBO(235, 237, 238, 1),
-                ], 
-                begin: Alignment.topCenter, 
-                end: Alignment.bottomCenter
-              )
-            ),*/
           child: TabBarView(
             children: <Widget>[
               BucketListView(),

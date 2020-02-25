@@ -3,19 +3,12 @@ import 'package:flutter/foundation.dart';
 
 class RecyclingProvider extends ChangeNotifier {
 
-  
-  int _courentPage = 0;
-  get courentPage => _courentPage;
   get data => _data;
   
-  void setCourentPage(page){
-    _courentPage = page;
-    notifyListeners();
-  }
 
   List<Map> _data = [
     {
-      'name': 'Metale i tworzywa sztuczne',
+      'name': 'Plastik',
       'img': 'assets/plastik_metal.png',
     },
     {
@@ -27,11 +20,11 @@ class RecyclingProvider extends ChangeNotifier {
       'img': 'assets/papier.png',
     },
     {
-      'name': 'Odpady biodegradowalne',
+      'name': 'Bio',
       'img': 'assets/bio.png',
     },
     {
-      'name': 'Odpady zmieszane',
+      'name': 'Zmieszane',
       'img': 'assets/zmieszane.png',
     },
 {
