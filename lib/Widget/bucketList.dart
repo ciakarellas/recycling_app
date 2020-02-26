@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:recycling_app/Provider/recycling_provider.dart';
 
 import 'package:recycling_app/Provider/trash_provider.dart';
 
