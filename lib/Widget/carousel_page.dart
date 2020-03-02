@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recycling_app/Widget/trashDetails.dart';
 
 
 class PageCarousel extends StatelessWidget{
@@ -82,7 +83,9 @@ class PageCarousel extends StatelessWidget{
               padding: EdgeInsets.fromLTRB(0, 5, 0, 5),
               child: MaterialButton(
                 onPressed: (){
-                 
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => TrashDetails(trashCategory: dataItem['name'],)));
                 },
                 color: Colors.lightBlue[600],
                 child: Text('Lista',style: TextStyle(color: Colors.white),),

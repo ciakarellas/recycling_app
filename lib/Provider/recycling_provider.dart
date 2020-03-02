@@ -15,8 +15,11 @@ class RecyclingProvider extends ChangeNotifier {
 
   List<Map> _data = [
     {
-      'name': 'Metale i tworzywa sztuczne',
+      'name': 'Plastik',
       'img': 'assets/plastik_metal.png',
+      "yes": ["tłusty plastik", 'zabawki plasikowe', 'plastik z zawartością'],
+      "no": ['puste butelki plastikowe', 'nakrędki', 'puszka'],
+      "description": ''
     },
     {
       'name': 'Szkło',
@@ -27,7 +30,7 @@ class RecyclingProvider extends ChangeNotifier {
       'img': 'assets/papier.png',
     },
     {
-      'name': 'Odpady biodegradowalne',
+      'name': 'Bio',
       'img': 'assets/bio.png',
     },
     {
