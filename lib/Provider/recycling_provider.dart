@@ -19,7 +19,7 @@ class RecyclingProvider extends ChangeNotifier {
       'img': 'assets/plastik_metal.png',
       "yes": ["tłusty plastik", 'zabawki plasikowe', 'plastik z zawartością'],
       "no": ['puste butelki plastikowe', 'nakrędki', 'puszka'],
-      "description": ''
+      "description": 'Plastki a dokładniej Metal i tworzywa sztuczne. Generalną zasadą w segregowaniu jak u lekarzy jest po pierwsze nie szkodzić ;) Jeśli masz wątpliwości czy dany śmieś sie nadaja do wyrzucenia wyrzuć go do zmieszanych'
     },
     {
       'name': 'Szkło',
