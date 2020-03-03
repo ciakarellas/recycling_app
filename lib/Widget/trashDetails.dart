@@ -10,7 +10,7 @@ class TrashDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final trasgDetailsProvider = Provider.of<RecyclingProvider>(context);
-    final data = trasgDetailsProvider.data.where((trash) => trash['name'] == trashCategory);
+    var data = trasgDetailsProvider.data.firstWhere((trash) => trash['name'] == trashCategory);
     return Scaffold(
         body: SafeArea(
           child: ListView(
@@ -24,7 +24,7 @@ class TrashDetails extends StatelessWidget {
                         padding: const EdgeInsets.all(8.0),
                         child: Bullet(size: 7,),
                       ),
-                      Text('Udało się $data.name'),
+                      Text('cos ${data["name"]}'),
                     ],
                   )
                 ]
