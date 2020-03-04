@@ -14,19 +14,22 @@ class TrashDetails extends StatelessWidget {
     return Scaffold(
         body: SafeArea(
           child: ListView(
-            padding: EdgeInsets.all(10),
+            padding: EdgeInsets.fromLTRB(15, 10, 15, 10),
             children: <Widget>[
               Column(
                 children: [
-                  Row(
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Bullet(size: 7,),
-                      ),
-                      Text('cos ${data["name"]}'),
-                    ],
-                  )
+                  Text(
+                    '${data["name"]}', 
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top:10),
+                    child: Text('${data["description"]}'),  
+                  ),
+                  _noList(data['no'])
                 ]
               )
             ],   
@@ -34,6 +37,15 @@ class TrashDetails extends StatelessWidget {
       )
     );
   }
+  Widget _noList(data){
+      return Column(
+        children: 
+          data.map<Widget>((trash){
+            return new Text('$trash');
+          }).toList()
+      
+      );
+    }
 }
 
 class Bullet extends StatelessWidget {
