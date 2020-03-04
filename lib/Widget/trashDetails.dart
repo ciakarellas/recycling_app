@@ -29,7 +29,20 @@ class TrashDetails extends StatelessWidget {
                     padding: EdgeInsets.only(top:10),
                     child: Text('${data["description"]}'),  
                   ),
-                  _noList(data['no'])
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children:[ 
+                      Text('No'),
+                      _noList(data['no'])
+                    ]
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text("Yes"),
+                      _yesList(data['yes']),
+                    ],
+                  )
                 ]
               )
             ],   
@@ -37,29 +50,49 @@ class TrashDetails extends StatelessWidget {
       )
     );
   }
+
   Widget _noList(data){
+    return Column(
+      children: 
+        data.map<Widget>((trash){
+          return Row(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: _bullet(6.0),
+              ),
+              new Text('$trash'),
+            ],
+          );
+        }).toList()
+    );
+  }
+
+  Widget _yesList(data){
       return Column(
         children: 
           data.map<Widget>((trash){
-            return new Text('$trash');
+            return Row(
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: _bullet(6.0),
+                ),
+                new Text('$trash'),
+              ],
+            );
           }).toList()
       
       );
     }
-}
 
-class Bullet extends StatelessWidget {
-  const Bullet({Key key, this.size}) : super(key: key);
-  final double size;
-
-  @override
-  Widget build(BuildContext context) {
+  Widget _bullet(size){
     return Container(
       height: size,
       width: size,
       decoration: new BoxDecoration(
-      color: Colors.black,
-      shape: BoxShape.circle,
+        color: Colors.black,
+        shape: BoxShape.circle,
       )
     );
   }
