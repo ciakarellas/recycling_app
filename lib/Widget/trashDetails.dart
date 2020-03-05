@@ -12,40 +12,54 @@ class TrashDetails extends StatelessWidget {
     final trasgDetailsProvider = Provider.of<RecyclingProvider>(context);
     var data = trasgDetailsProvider.data.firstWhere((trash) => trash['name'] == trashCategory);
     return Scaffold(
-        body: SafeArea(
-          child: ListView(
-            padding: EdgeInsets.fromLTRB(15, 10, 15, 10),
-            children: <Widget>[
-              Column(
-                children: [
-                  Text(
-                    '${data["name"]}', 
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                    ),
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.white,
+        leading: MaterialButton(
+            child: Icon(
+              Icons.arrow_back, 
+              color: Colors.black,
+            ),
+            onPressed: (){
+              Navigator.pop(context);
+            },
+          ),
+      ),
+      body: SafeArea(
+        child: ListView(
+          padding: EdgeInsets.fromLTRB(15, 10, 15, 10),
+          children: <Widget>[
+            Column(
+              children: [
+                Text(
+                  '${data["name"]}', 
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
                   ),
-                  Padding(
-                    padding: EdgeInsets.only(top:10),
-                    child: Text('${data["description"]}'),  
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children:[ 
-                      Text('No'),
-                      _noList(data['no'])
-                    ]
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text("Yes"),
-                      _yesList(data['yes']),
-                    ],
-                  )
-                ]
-              )
-            ],   
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top:10),
+                  child: Text('${data["description"]}'),  
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children:[ 
+                    Text('No'),
+                    _noList(data['no'])
+                  ]
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text("Yes"),
+                    _yesList(data['yes']),
+                  ],
+                )
+              ]
+            )
+          ],   
         )
       )
     );
