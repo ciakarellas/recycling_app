@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:recycling_app/Provider/pszokDataProvider.dart';
 import 'package:recycling_app/Provider/recycling_provider.dart';
 import 'package:recycling_app/Provider/trash_provider.dart';
 
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider<TrashProvider>(create: (_) => TrashProvider()),
         ChangeNotifierProvider<RecyclingProvider>(create: (_) => RecyclingProvider()),
+        ChangeNotifierProvider<PszokDataProvider>(create: (_) => PszokDataProvider()),
       ],
       child: MaterialApp(
         home: HomePage(),
