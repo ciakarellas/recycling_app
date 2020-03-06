@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -28,7 +29,7 @@ class TrashDetails extends StatelessWidget {
       ),
       body: SafeArea(
         child: ListView(
-          padding: EdgeInsets.fromLTRB(15, 10, 15, 10),
+          padding: EdgeInsets.fromLTRB(25, 0, 40, 15),
           children: <Widget>[
             Column(
               children: [
@@ -41,19 +42,45 @@ class TrashDetails extends StatelessWidget {
                 ),
                 Padding(
                   padding: EdgeInsets.only(top:10),
-                  child: Text('${data["description"]}'),  
+                  child: Text(
+                    '${data["description"]}',
+                    style: TextStyle(
+                      letterSpacing: .8,
+                      height: 1.5
+                    )
+                  ),  
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children:[ 
-                    Text('No'),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(0,15,0,15),
+                      child: Text(
+                        'Nie wyrzucaj',
+                        style: TextStyle(
+                          letterSpacing: .8,
+                          color: Colors.red,
+                          fontWeight: FontWeight.bold,
+                        )  
+                      ),
+                    ),
                     _noList(data['no'])
                   ]
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text("Yes"),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(0,15,0,15),
+                      child: Text(
+                        "Wyrzucaj śmiało",
+                        style: TextStyle(
+                          letterSpacing: .8,
+                          color: Colors.green,
+                          fontWeight: FontWeight.bold
+                        ),
+                      ),
+                    ),
                     _yesList(data['yes']),
                   ],
                 )
