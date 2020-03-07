@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 
 import 'package:recycling_app/Provider/pszokDataProvider.dart';
+import 'package:recycling_app/Widget/pszok_details.dart';
 
 class PszokListView extends StatelessWidget {
   const PszokListView({Key key}) : super(key: key);
@@ -10,7 +11,7 @@ class PszokListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //var pszokData = Provider.of<PszokDataProvider>(context);
+    var pszokData = Provider.of<PszokDataProvider>(context);
     return CustomScrollView(
       slivers: <Widget>[
         SliverAppBar(
@@ -43,9 +44,9 @@ class PszokListView extends StatelessWidget {
         SliverList(
           delegate: SliverChildBuilderDelegate(
             (BuildContext context, int index){
-              return Text('1');
+              return PszokDetails(pszokDetails:pszokData.pszokData[index]);
           },
-          childCount: 10
+          childCount: pszokData.pszokData.length
         )
         ),
         SliverAppBar(
