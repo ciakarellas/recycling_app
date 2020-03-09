@@ -12,6 +12,7 @@ class PszokListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var pszokData = Provider.of<PszokDataProvider>(context);
+    pszokData.sortPszok();
     return CustomScrollView(
       slivers: <Widget>[
         SliverAppBar(

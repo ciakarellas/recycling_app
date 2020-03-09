@@ -7,7 +7,7 @@ class PszokDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     
     return Container(
-      child: Text(pszokDetails['www']),
+      child: Text(pszokDetails['city']),
     );
   }
 }
