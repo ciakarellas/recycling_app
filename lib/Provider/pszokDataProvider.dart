@@ -177,12 +177,16 @@ class PszokDataProvider extends ChangeNotifier{
     
   ];
 
-  
+  List _city = ["Długa Kościelna", "Płońsk", "Żyrardów", "Radom", "Piaseczno", "Wyszków", "Sochaczew", "Belsk Duży", "Chynów", "Nowe Miszewo", "Łódź", "Poznań", "Murowana Goślina", "Oborniki", "Rabowice", "Kielce", "Kraków", "Wrocław", "Bydgoszcz", "Toruń", "Gdańsk", "Gdynia", "Łężyce", "Olsztyn", "Białystok", "Lublin", "Rzeszów", "Opole", "Gorzów Wielkopolski", "Zielona Góra", "Szczecin", "Mińsk Mazowiecki", "Pruszków", "Otwock", "Warszawa", "Płock", "Kobyłka", "Wołomin", "Nowy Dwór Mazowiecki", "Łęczna", "Ciechanów", "Garwolin", "Grodzisk Mazowiecki", "Kozienice", "Legionowo", "Serock", "Lipsko", "Maków Mazowiecki", "Mława", "Nasielsk", "Zakroczym", "Ostrów Mazowiecka", "Józefów", "Karczew", "Tarczyn", "Raciąż", "Kutno", "Łowicz", "Skierniewice", "Warka", "Bakałarzewo", "Węgorzewo", "Spytkowo", "Giżycko", "Orzysz", "Pisz", "Ryn", 'Mrągowo', "Bisztynek", "Bartoszyce", "Hryniewice", 'Baranowo', "Bielsk Podlask", "Białowieża", "Elbląg", "Krynica" "Morska", "Nowy Dwór Gdański", "Stegna", "Buśnie", "Zamość", "Tomaszowie Lubelskim", "Aleksandrów", "Biłgoraj", "Łańcut"];
+  List _state =['dolnośląskie', 'kujawsko-pomorskie', 'lubelskie', 'lubuskie', 'mazowieckie', 'małopolskie', 'opolskie', 'podkarpackie', 'podlaskie', 'pomorskie', 'warmińsko-mazurskie', 'wielkopolskie', 'zachodniopomorskie', 'łódzkie', 'śląskie', 'świętokrzyskie'];
+  get state => _state;
+  get city => _city;
   get pszokData => _pszokData;
   get mobilePszok => _mobilePszok;
 
   void sortPszok(){
     _pszokData.sort((a,b) => a['city'].compareTo(b['city']));
     _mobilePszok.sort((a,b) => a['city'].compareTo(b['city']));
+    _city.sort((a,b) => a.compareTo(b));
   }
 }
