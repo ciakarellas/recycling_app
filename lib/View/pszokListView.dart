@@ -26,7 +26,11 @@ class PszokListView extends StatelessWidget {
             crossAxisCount: 2,
             children: pszokData.state.map<Widget>((state){
               return GestureDetector(
-                onTap: (){},
+                onTap: (){
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => PszokDetails(pszokDetails: pszokData.pszokData[0],)));
+                },
                 child: Container(
                 decoration: BoxDecoration(
                   color: Colors.yellow,
@@ -41,32 +45,5 @@ class PszokListView extends StatelessWidget {
       ),]
           )
     );
-    /*return SafeArea(
-
-      bottom: true,
-      top: true,
-      child: GridView.count(
-
-        childAspectRatio: (10/4),
-        crossAxisCount: 2,
-        primary: true,
-        padding: const EdgeInsets.all(10),
-        children: pszokData.state.map<Widget>((state){
-          return GestureDetector(
-            onTap: (){},
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.yellow,
-                borderRadius: BorderRadius.circular(20),
-              ),
-              margin: EdgeInsets.all(5),
-              height: 20,
-              child: Center(child: Text(state, textAlign: TextAlign.center,))
-              ),
-          );
-        }).toList(),
-      ),
-    );
-  }*/
-}
+  }
 }
