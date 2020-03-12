@@ -17,7 +17,7 @@ class BucketListView extends StatelessWidget {
               Stack(
                 children: <Widget>[
                   BucketList(),
-                  SearchBar(),
+                  SearchBar(hintText: "Gdzie powinienem wyrzucić ... ?",),
                 ],
               ),
             

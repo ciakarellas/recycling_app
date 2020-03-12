@@ -4,6 +4,9 @@ import 'package:recycling_app/Provider/trash_provider.dart';
 
 class SearchBar extends StatelessWidget {
   final _searchQueryController = TextEditingController();
+  final String hintText;
+
+  SearchBar({Key key, this.hintText}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +33,7 @@ class SearchBar extends StatelessWidget {
               child: Icon(Icons.search),
             ),
             border: InputBorder.none,
-            hintText: "Gdzie powinienem wyrzucić ... ?",
+            hintText: hintText,
           ),
         ),
       ),

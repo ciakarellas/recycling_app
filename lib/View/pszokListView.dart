@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 
 
 import 'package:recycling_app/Provider/pszokDataProvider.dart';
-import 'package:recycling_app/Widget/pszok_details.dart';
+import 'package:recycling_app/Widget/Pszok_views/pszok_details.dart';
 
 class PszokListView extends StatelessWidget {
   const PszokListView({Key key}) : super(key: key);
@@ -24,12 +24,13 @@ class PszokListView extends StatelessWidget {
           SliverGrid.count(
             childAspectRatio: (10/4),
             crossAxisCount: 2,
-            children: pszokData.state.map<Widget>((state){
+            children: pszokData.stateList.map<Widget>((state){
               return GestureDetector(
                 onTap: (){
                   Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => PszokDetails(pszokDetails: pszokData.pszokData[0],)));
+                  MaterialPageRoute(builder: (context) => PszokDetails()));
+                  pszokData.setingState(state);
                 },
                 child: Container(
                 decoration: BoxDecoration(

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
+import 'package:recycling_app/Widget/Pszok_views/pszokList.dart';
+import '../searchBar.dart';
+
 class PszokDetails extends StatelessWidget {
-  const PszokDetails({Key key, this.pszokDetails}) : super(key: key);
-  final Map pszokDetails;
+  const PszokDetails({Key key,}) : super(key: key);
+  //final state;
   @override
   Widget build(BuildContext context) {
     
@@ -10,7 +13,17 @@ class PszokDetails extends StatelessWidget {
       body: SafeArea(
         top:true,
         bottom: true,
-        child: Container(
+        child: Stack(
+          children: <Widget>[
+            Center(child: PszokList()),
+            SearchBar(hintText: "Kutno"),
+            
+
+          ],
+        )
+        
+        
+        /*Container(
           padding: EdgeInsets.all(10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -27,7 +40,7 @@ class PszokDetails extends StatelessWidget {
               Text(pszokDetails['preferred'])
             ],
           ),
-        ),
+        )*/,
       ),
     );
   }
